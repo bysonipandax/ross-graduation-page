@@ -211,19 +211,13 @@
   @media(max-width:640px){ .about-grid{ grid-template-columns:1fr; gap:28px; } }
   .portrait{
     aspect-ratio:4/5;
-    background:
-      repeating-linear-gradient(135deg, rgba(184,147,90,0.10) 0 2px, transparent 2px 14px),
-      var(--parchment-2);
     border:1.5px solid rgba(184,147,90,0.5);
-    display:flex; align-items:center; justify-content:center;
-    text-align:center;
-    padding:20px;
+    overflow:hidden;
   }
-  .portrait span{
-    font-family:var(--mono);
-    font-size:0.74rem;
-    color:var(--charcoal-soft);
-    letter-spacing:0.03em;
+  .portrait img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
   }
   .about-text h3{
     font-family:var(--serif);
@@ -322,21 +316,20 @@
       <div class="seal">RC</div>
       <div class="brandtext">Ross Cullum<span>Graduation Name Reading</span></div>
     </div>
-    <a href="#contact" class="btn btn-outline">Book a Consultation</a>
+    <a href="mailto:rosscullum@gmail.com" class="btn btn-outline">By Invitation Only</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <span class="eyebrow">For Universities &amp; Events Teams</span>
+    <span class="eyebrow">For Universities &amp; Graduation Events</span>
     <h1>
       <span class="line">Every name,</span><br>
       <span class="line">said right.</span>
     </h1>
     <p class="hero-sub">Professional graduation name reading — so every student hears their name spoken with confidence and care, on the one day it matters most.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn btn-brass">Book a Consultation</a>
-      <a href="#offer" class="btn btn-outline">See How It Works</a>
+      <a href="mailto:rosscullum@gmail.com" class="btn btn-brass">By Invitation Only</a>
     </div>
   </div>
 </section>
@@ -388,56 +381,20 @@
 <section class="section-parchment-2 reveal">
   <div class="wrap">
     <div class="about-grid">
-      <div class="portrait"><span>Photo of Ross<br>to be added</span></div>
+      <div class="portrait"><img src="ross-photo.png" alt="Ross Cullum"></div>
       <div class="about-text">
         <span class="eyebrow" style="color:var(--burgundy)">Trained to Get It Right</span>
         <h3>About Ross</h3>
-        <p style="color:var(--charcoal-soft)">Ross Cullum is a professional actor and trained voice specialist who brings the same precision used in broadcast and stage work to graduation ceremonies. Every name is treated with the same care a performer gives a script — because for that student, this is the one moment that matters.</p>
+        <p style="color:var(--charcoal-soft)">Ross Cullum is a professional actor and speech consultant who brings the same precision to graduation ceremonies that he uses when acting in the world's biggest films and TV shows.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section-burgundy reveal">
-  <div class="wrap">
-    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
-      <span class="eyebrow" style="color:var(--brass-lt)">Order of Service</span>
-      <h2 style="color:var(--warm-white)">How it works</h2>
-    </div>
-    <div class="program">
-      <div class="program-item">
-        <div class="numeral">I.</div>
-        <div><h4>Get in touch</h4><p>Share your ceremony date and expected number of graduates.</p></div>
-      </div>
-      <div class="program-item">
-        <div class="numeral">II.</div>
-        <div><h4>Name list handover</h4><p>Send through your student name list ahead of the ceremony.</p></div>
-      </div>
-      <div class="program-item">
-        <div class="numeral">III.</div>
-        <div><h4>Prep &amp; rehearsal</h4><p>Pronunciation is confirmed and rehearsed well in advance.</p></div>
-      </div>
-      <div class="program-item">
-        <div class="numeral">IV.</div>
-        <div><h4>Ceremony day</h4><p>Confident, accurate name reading, start to finish.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="cta-close">
-  <div class="wrap cta-close-inner">
-    <span class="eyebrow">Get In Touch</span>
-    <h2 style="margin-top:16px;">Let's make sure every name is heard right.</h2>
-    <p>Tell me your ceremony date, graduate numbers, and I'll walk you through how this works for your institution.</p>
-    <a href="mailto:hello@example.com" class="btn btn-brass">Contact Ross</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap footer-inner">
     <span>© 2026 Ross Cullum — Graduation Name Reading</span>
-    <a href="mailto:hello@example.com">hello@example.com</a>
+    <a href="mailto:rosscullum@gmail.com">rosscullum@gmail.com</a>
   </div>
 </footer>
 
