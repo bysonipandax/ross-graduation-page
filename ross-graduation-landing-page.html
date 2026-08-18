@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ross Cullum — Graduation Name Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #1B2430;
+    --ink-2:    #232E3D;
+    --parchment:#F7F3EA;
+    --parchment-2:#F0EADB;
+    --brass:    #B8935A;
+    --brass-lt: #D9BC8C;
+    --burgundy: #5C2233;
+    --burgundy-lt:#7A3245;
+    --warm-white:#FDFBF6;
+    --charcoal: #2A2620;
+    --charcoal-soft: #57503f;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--sans);
+    background:var(--parchment);
+    color:var(--charcoal);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  @media(max-width:640px){ .wrap{ padding:0 22px; } }
+
+  /* ---------- phonetic tag signature ---------- */
+  .phon{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.7rem;
+    letter-spacing:0.02em;
+    color:var(--brass-lt);
+    opacity:0.85;
+    margin-top:2px;
+  }
+  .phon.dark{ color:var(--burgundy); opacity:0.7; }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass);
+  }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(27,36,48,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(184,147,90,0.25);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px;
+    max-width:1080px; margin:0 auto;
+  }
+  .seal{
+    width:38px; height:38px;
+    border:1.5px solid var(--brass);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif);
+    color:var(--brass-lt);
+    font-size:0.95rem;
+    flex-shrink:0;
+  }
+  .brandblock{ display:flex; align-items:center; gap:12px; }
+  .brandtext{ color:var(--warm-white); font-size:0.92rem; font-weight:500; letter-spacing:0.01em; }
+  .brandtext span{ display:block; color:var(--brass-lt); font-size:0.68rem; font-family:var(--mono); letter-spacing:0.06em; margin-top:1px; }
+  .btn{
+    display:inline-block;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.88rem;
+    padding:11px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    letter-spacing:0.01em;
+    transition:transform 0.15s ease, background 0.2s ease, color 0.2s ease;
+    cursor:pointer;
+    border:1.5px solid transparent;
+  }
+  .btn-brass{ background:var(--brass); color:var(--ink); }
+  .btn-brass:hover{ background:var(--brass-lt); transform:translateY(-1px); }
+  .btn-outline{ border-color:var(--brass); color:var(--brass-lt); background:transparent; }
+  .btn-outline:hover{ background:rgba(184,147,90,0.12); transform:translateY(-1px); }
+  .nav .btn{ font-size:0.82rem; padding:9px 18px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--warm-white);
+    overflow:hidden;
+    padding:112px 0 96px;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:-20%; left:50%;
+    width:900px; height:900px;
+    transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(184,147,90,0.20) 0%, rgba(184,147,90,0.06) 38%, transparent 65%);
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; max-width:740px; margin:0 auto; text-align:center; }
+  .hero .eyebrow{ display:block; margin-bottom:22px; }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(2.4rem, 5.4vw, 3.9rem);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .line{ display:inline-block; }
+  .hero-sub{
+    max-width:520px; margin:30px auto 0;
+    font-size:1.08rem;
+    color:#C9CDD6;
+  }
+  .hero-ctas{ margin-top:42px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+  /* ---------- section shells ---------- */
+  section{ padding:88px 0; }
+  @media(max-width:640px){ section{ padding:64px 0; } }
+  .section-parchment{ background:var(--parchment); }
+  .section-parchment-2{ background:var(--parchment-2); }
+  .section-ink{ background:var(--ink); color:var(--warm-white); }
+  .section-burgundy{ background:var(--burgundy); color:var(--warm-white); }
+
+  h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(1.7rem, 3.2vw, 2.35rem);
+    line-height:1.2;
+    letter-spacing:-0.01em;
+  }
+  .section-head{ max-width:620px; margin-bottom:44px; }
+  .section-head .eyebrow{ display:block; margin-bottom:14px; }
+
+  .lede{ font-size:1.08rem; max-width:640px; }
+  .lede.center{ margin:0 auto; text-align:center; }
+
+  /* pull statement in problem section */
+  .pull{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(1.35rem, 2.6vw, 1.7rem);
+    line-height:1.42;
+    color:var(--charcoal);
+    max-width:660px;
+    margin:34px 0;
+    padding-left:24px;
+    border-left:3px solid var(--brass);
+  }
+
+  /* ---------- offer grid ---------- */
+  .offer-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:2px;
+    background:rgba(184,147,90,0.25);
+    border:1px solid rgba(184,147,90,0.25);
+  }
+  @media(max-width:640px){ .offer-grid{ grid-template-columns:1fr; } }
+  .offer-item{
+    background:var(--ink);
+    padding:36px 32px;
+  }
+  .offer-item .tag{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    color:var(--brass-lt);
+    letter-spacing:0.04em;
+  }
+  .offer-item h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.22rem;
+    margin:12px 0 10px;
+    color:var(--warm-white);
+  }
+  .offer-item p{ color:#B7BCC6; font-size:0.95rem; }
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  @media(max-width:640px){ .about-grid{ grid-template-columns:1fr; gap:28px; } }
+  .portrait{
+    aspect-ratio:4/5;
+    background:
+      repeating-linear-gradient(135deg, rgba(184,147,90,0.10) 0 2px, transparent 2px 14px),
+      var(--parchment-2);
+    border:1.5px solid rgba(184,147,90,0.5);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    padding:20px;
+  }
+  .portrait span{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    color:var(--charcoal-soft);
+    letter-spacing:0.03em;
+  }
+  .about-text h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.5rem;
+    margin-bottom:6px;
+  }
+
+  /* ---------- order of service ---------- */
+  .program{
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+  }
+  .program::before{
+    content:'';
+    position:absolute;
+    left:29px; top:6px; bottom:6px;
+    width:1px;
+    background:rgba(253,251,246,0.25);
+  }
+  .program-item{
+    position:relative;
+    display:flex;
+    gap:26px;
+    padding:22px 0;
+  }
+  .program-item + .program-item{ border-top:1px solid rgba(253,251,246,0.12); }
+  .numeral{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--brass-lt);
+    width:60px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .program-item h4{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:1.03rem;
+    margin-bottom:6px;
+    color:var(--warm-white);
+  }
+  .program-item p{ color:#E4D9C8; font-size:0.94rem; max-width:440px; }
+
+  /* ---------- closing cta ---------- */
+  .cta-close{
+    position:relative;
+    background:var(--ink);
+    color:var(--warm-white);
+    text-align:center;
+    overflow:hidden;
+    padding:96px 0;
+  }
+  .cta-close::before{
+    content:'';
+    position:absolute;
+    bottom:-30%; left:50%;
+    width:800px; height:800px;
+    transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(184,147,90,0.16) 0%, transparent 60%);
+  }
+  .cta-close-inner{ position:relative; max-width:560px; margin:0 auto; }
+  .cta-close h2{ margin-bottom:16px; }
+  .cta-close p{ color:#C9CDD6; margin-bottom:34px; }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--ink);
+    border-top:1px solid rgba(184,147,90,0.2);
+    padding:36px 0;
+  }
+  .footer-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:16px;
+    color:#8E93A0; font-size:0.85rem;
+  }
+  .footer-inner a{ color:var(--brass-lt); text-decoration:none; }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  :focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brandblock">
+      <div class="seal">RC</div>
+      <div class="brandtext">Ross Cullum<span>Graduation Name Reading</span></div>
+    </div>
+    <a href="#contact" class="btn btn-outline">Book a Consultation</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">For Universities &amp; Events Teams</span>
+    <h1>
+      <span class="line">Every name,</span><br>
+      <span class="line">said right.</span>
+    </h1>
+    <p class="hero-sub">Professional graduation name reading — so every student hears their name spoken with confidence and care, on the one day it matters most.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-brass">Book a Consultation</a>
+      <a href="#offer" class="btn btn-outline">See How It Works</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-parchment reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--burgundy)">Why This Matters</span>
+      <h2>A mispronounced name is the one thing every graduate remembers.</h2>
+    </div>
+    <p class="lede" style="color:var(--charcoal-soft)">Graduation is one of the most photographed, filmed, and replayed days of a student's life. For names outside the "default" pronunciation set, a fumbled reading on stage can turn a proud moment into an awkward one — in front of family, friends, and a room full of cameras.</p>
+    <p class="pull">Universities want every graduate to feel seen. A trained, careful name reader is how that happens.</p>
+  </div>
+</section>
+
+<section id="offer" class="section-ink reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What I Offer</span>
+      <h2 style="color:var(--warm-white)">A process built around accuracy, not guesswork.</h2>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="offer-grid">
+      <div class="offer-item">
+        <span class="tag">[ prep ]</span>
+        <h3>Name collection &amp; phonetic prep</h3>
+        <p>Working directly with students ahead of time to confirm exact pronunciation, not assumptions.</p>
+      </div>
+      <div class="offer-item">
+        <span class="tag">[ rehearsal ]</span>
+        <h3>A rehearsal pass</h3>
+        <p>Unfamiliar or complex names get practised before the ceremony, not read cold for the first time.</p>
+      </div>
+      <div class="offer-item">
+        <span class="tag">[ delivery ]</span>
+        <h3>Live, confident delivery</h3>
+        <p>Clear, warm, accurate reading on stage — trained stage and broadcast experience, applied to every name.</p>
+      </div>
+      <div class="offer-item">
+        <span class="tag">[ scale ]</span>
+        <h3>Consistency at scale</h3>
+        <p>Reliable across ceremonies with hundreds, or thousands, of names — no drop-off in care by name 400.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-parchment-2 reveal">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait"><span>Photo of Ross<br>to be added</span></div>
+      <div class="about-text">
+        <span class="eyebrow" style="color:var(--burgundy)">Trained to Get It Right</span>
+        <h3>About Ross</h3>
+        <p style="color:var(--charcoal-soft)">Ross Cullum is a professional actor and trained voice specialist who brings the same precision used in broadcast and stage work to graduation ceremonies. Every name is treated with the same care a performer gives a script — because for that student, this is the one moment that matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-burgundy reveal">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="eyebrow" style="color:var(--brass-lt)">Order of Service</span>
+      <h2 style="color:var(--warm-white)">How it works</h2>
+    </div>
+    <div class="program">
+      <div class="program-item">
+        <div class="numeral">I.</div>
+        <div><h4>Get in touch</h4><p>Share your ceremony date and expected number of graduates.</p></div>
+      </div>
+      <div class="program-item">
+        <div class="numeral">II.</div>
+        <div><h4>Name list handover</h4><p>Send through your student name list ahead of the ceremony.</p></div>
+      </div>
+      <div class="program-item">
+        <div class="numeral">III.</div>
+        <div><h4>Prep &amp; rehearsal</h4><p>Pronunciation is confirmed and rehearsed well in advance.</p></div>
+      </div>
+      <div class="program-item">
+        <div class="numeral">IV.</div>
+        <div><h4>Ceremony day</h4><p>Confident, accurate name reading, start to finish.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-close">
+  <div class="wrap cta-close-inner">
+    <span class="eyebrow">Get In Touch</span>
+    <h2 style="margin-top:16px;">Let's make sure every name is heard right.</h2>
+    <p>Tell me your ceremony date, graduate numbers, and I'll walk you through how this works for your institution.</p>
+    <a href="mailto:hello@example.com" class="btn btn-brass">Contact Ross</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Ross Cullum — Graduation Name Reading</span>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  items.forEach(i => io.observe(i));
+</script>
+
+</body>
+</html>
